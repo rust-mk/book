@@ -1,179 +1,180 @@
-# Introduction
+# Вовед
 
-> Note: This edition of the book is the same as [The Rust Programming
-> Language][nsprust] available in print and ebook format from [No Starch
-> Press][nsp].
+> Забелешка: Ова издание на книгата е исто што и [Програмата за русти
+> Јазик] [nsprust] достапен во формат за печатење и ebook од [Не скроб]
+> Прес] [nsp].
 
 [nsprust]: https://nostarch.com/rust
 [nsp]: https://nostarch.com/
 
-Welcome to *The Rust Programming Language*, an introductory book about Rust.
-The Rust programming language helps you write faster, more reliable software.
-High-level ergonomics and low-level control are often at odds in programming
-language design; Rust challenges that conflict. Through balancing powerful
-technical capacity and a great developer experience, Rust gives you the option
-to control low-level details (such as memory usage) without all the hassle
-traditionally associated with such control.
+Добредојдовте во * The Rust Programming Language *, воведна книга за Рѓа.
+Програмскиот јазик "Раст" ви помага да пишувате побрз, посигурен софтвер.
+Ергономијата на високо ниво и контролата на ниско ниво се честопати несогласувања во програмирањето
+јазичен дизајн; Рѓа предизвици кои конфликт. Преку балансирање моќно
+технички капацитет и одлично искуство за програмери, Rust ти дава опција
+за контрола на деталите на пониско ниво (како што се користење на меморијата) без сите проблеми
+традиционално поврзани со таква контрола.
 
-## Who Rust Is For
+## Кој е 'ржот
 
-Rust is ideal for many people for a variety of reasons. Let’s look at a few of
-the most important groups.
+Рѓа е идеална за многу луѓе од различни причини. Ајде да погледнеме неколку од нив
+најважните групи.
 
-### Teams of Developers
+### Тимови на програмери
 
-Rust is proving to be a productive tool for collaborating among large teams of
-developers with varying levels of systems programming knowledge. Low-level code
-is prone to a variety of subtle bugs, which in most other languages can be
-caught only through extensive testing and careful code review by experienced
-developers. In Rust, the compiler plays a gatekeeper role by refusing to
-compile code with these elusive bugs, including concurrency bugs. By working
-alongside the compiler, the team can spend their time focusing on the program’s
-logic rather than chasing down bugs.
+Ржа се покажа како продуктивна алатка за соработка меѓу големите тимови
+програмери со различни нивоа на системско знаење за програмирање. Низок код
+е склон кон различни суптилни грешки, што во повеќето други јазици може да биде
+фатени само преку детално тестирање и внимателно прегледување на кодот од страна на искусни
+програмери. Во Руст, компајлерот игра улога на довереник со тоа што одбива
+компајлирајте го кодот со овие неостварливи грешки, вклучувајќи ги и конкурентските грешки. Со работа
+заедно со компајлерот, тимот може да го помине своето време фокусирајќи се на програмата
+логика, наместо да ги бркаат грешките.
 
-Rust also brings contemporary developer tools to the systems programming world:
+Rust, исто така, носи современи алатки за развој на системот за програмирање на светот:
 
-* Cargo, the included dependency manager and build tool, makes adding,
-  compiling, and managing dependencies painless and consistent across the Rust
-  ecosystem.
-* Rustfmt ensures a consistent coding style across developers.
-* The Rust Language Server powers Integrated Development Environment (IDE)
-  integration for code completion and inline error messages.
+* Cargo, вклучениот менаџер на зависност и алатка за изградба, го прави додавањето,
+  составувањето и управувањето со зависностите безболни и конзистентни низ Рѓа
+  екосистем.
+* Rustfmt обезбедува конзистентен стил на шифрирање кај програмерите.
+* Серверот за Rust Language Server овластува интегрирано развојно опкружување (IDE)
+  интеграција за комплетирање на кодот и пораки за грешка.
 
-By using these and other tools in the Rust ecosystem, developers can be
-productive while writing systems-level code.
+Со користење на овие и други алатки во екосистемот Руст, програмерите можат да бидат
+продуктивен додека пишува системски код.
 
-### Students
+### Студентите
 
-Rust is for students and those who are interested in learning about systems
-concepts. Using Rust, many people have learned about topics like operating
-systems development. The community is very welcoming and happy to answer
-student questions. Through efforts such as this book, the Rust teams want to
-make systems concepts more accessible to more people, especially those new to
-programming.
+Рѓа е за учениците и за оние кои се заинтересирани да учат за системите
+концепти. Користење на 'рѓа, многу луѓе научиле за теми како што работат
+развој на системи. Заедницата е многу добредојдена и среќна да одговори
+студентски прашања. Преку напори како што е оваа книга, тимовите на "Руст" сакаат
+да направат системски концепти подостапни за повеќе луѓе, особено оние кои се нови
+програмирање.
 
-### Companies
+### Компании
 
-Hundreds of companies, large and small, use Rust in production for a variety of
-tasks. Those tasks include command line tools, web services, DevOps tooling,
-embedded devices, audio and video analysis and transcoding, cryptocurrencies,
-bioinformatics, search engines, Internet of Things applications, machine
-learning, and even major parts of the Firefox web browser.
+Стотици компании, големи и мали, користат Рѓа во производството за различни
+задачи. Овие задачи вклучуваат алатки за командната линија, веб сервиси, DevOps алатки,
+вградени уреди, аудио и видео анализа и транскодиране, криптовекциите,
+биоинформатиката, пребарувачите, Интернет на нештата апликации, машина
+учење, па дури и главни делови на веб прелистувачот Firefox.
 
-### Open Source Developers
+### развивачи на слободен софтвер
 
-Rust is for people who want to build the Rust programming language, community,
-developer tools, and libraries. We’d love to have you contribute to the Rust
-language.
+Рѓа е за луѓе кои сакаат да го изградат програмскиот јазик на рж, заедница,
+развивачки алатки и библиотеки. Ние би сакале да имате придонес кон Рѓа
+јазик.
 
-### People Who Value Speed and Stability
+### Луѓе кои ја вреднуваат брзината и стабилноста
 
-Rust is for people who crave speed and stability in a language. By speed, we
-mean the speed of the programs that you can create with Rust and the speed at
-which Rust lets you write them. The Rust compiler’s checks ensure stability
-through feature additions and refactoring. This is in contrast to the brittle
-legacy code in languages without these checks, which developers are often
-afraid to modify. By striving for zero-cost abstractions, higher-level features
-that compile to lower-level code as fast as code written manually, Rust
-endeavors to make safe code be fast code as well.
+Рѓа е за луѓе кои копнеат за брзина и стабилност на еден јазик. Со брзина, ние
+значи брзината на програмите што можете да ги креирате со Rust и брзината на
+кои Rust ви овозможува да ги напишете. Проверките на компајлерот на 'рѓата обезбедуваат стабилност
+преку додавање на функции и рефакторинг. Ова е спротивно на кршливи
+код за наследство на јазици без овие проверки, кои програмерите често ги имаат
+се плаши да се измени. Со стремеж за апстракции со нула трошоци, функции на повисоко ниво
+кои се компајлираат на пониско ниво кодот брзо како кодот напишан рачно, 'рѓа
+напори да се направи безбеден код биде брз код, како и.
 
-The Rust language hopes to support many other users as well; those mentioned
-here are merely some of the biggest stakeholders. Overall, Rust’s greatest
-ambition is to eliminate the trade-offs that programmers have accepted for
-decades by providing safety *and* productivity, speed *and* ergonomics. Give
-Rust a try and see if its choices work for you.
+Јазикот "Руст" се надева дека ќе поддржува и многу други корисници; оние споменати
+тука се само некои од најголемите засегнати страни. Севкупно, најголема Rust е
+амбиција е да се елиминираат размени кои програмерите ги прифатија
+децении со обезбедување на безбедноста * и * продуктивноста, брзината * и * ергономијата. Дај
+Рѓа обидете се и види дали неговите избори работат за вас.
 
-## Who This Book Is For
+## Која е оваа книга
 
-This book assumes that you’ve written code in another programming language but
-doesn’t make any assumptions about which one. We’ve tried to make the material
-broadly accessible to those from a wide variety of programming backgrounds. We
-don’t spend a lot of time talking about what programming *is* or how to think
-about it. If you’re entirely new to programming, you would be better served by
-reading a book that specifically provides an introduction to programming.
+Оваа книга претпоставува дека сте напишале код во друг програмски јазик, но
+не прави никакви претпоставки за тоа. Се обидовме да го направиме материјалот
+широко достапни за оние од широк спектар на програми за потекло. Ние
+не поминуваат многу време да разговараат за тоа што програмирањето * е * или како да мислите
+за тоа. Ако сте сосема нови за програмирање, подобро би ни служеле
+читање книга која конкретно обезбедува вовед во програмирање.
 
-## How to Use This Book
+## Како да ја користите оваа книга
 
-In general, this book assumes that you’re reading it in sequence from front to
-back. Later chapters build on concepts in earlier chapters, and earlier
-chapters might not delve into details on a topic; we typically revisit the
-topic in a later chapter.
+Општо земено, оваа книга претпоставува дека го читате во редослед од напред до
+назад. Подоцна поглавја се градат врз концепти во претходните поглавја и порано
+поглавја можеби нема да се истражуваат во детали за некоја тема; ние обично се враќаме на
+тема во подоцнежното поглавје.
 
-You’ll find two kinds of chapters in this book: concept chapters and project
-chapters. In concept chapters, you’ll learn about an aspect of Rust. In project
-chapters, we’ll build small programs together, applying what you’ve learned so
-far. Chapters 2, 12, and 20 are project chapters; the rest are concept chapters.
+Во оваа книга ќе најдете два вида поглавја: поглавја на концептот и проект
+поглавја. Во концепт поглавја, ќе дознаете за еден аспект на 'рѓа. Во проектот
+поглавја, ќе градиме мали програми заедно, применувајќи го она што го научиле
+далеку. Поглавјата 2, 12 и 20 се поглавја на проектот; останатите се концепт поглавја.
 
-Chapter 1 explains how to install Rust, how to write a Hello, world! program,
-and how to use Cargo, Rust’s package manager and build tool. Chapter 2 is a
-hands-on introduction to the Rust language. Here we cover concepts at a high
-level, and later chapters will provide additional detail. If you want to get
-your hands dirty right away, Chapter 2 is the place for that. At first, you
-might even want to skip Chapter 3, which covers Rust features similar to those
-of other programming languages, and head straight to Chapter 4 to learn about
-Rust’s ownership system. However, if you’re a particularly meticulous learner
-who prefers to learn every detail before moving on to the next, you might want
-to skip Chapter 2 and go straight to Chapter 3, returning to Chapter 2 when
-you’d like to work on a project applying the details you’ve learned.
+Поглавје 1 објаснува како да го инсталирате Руста, како да напишете Hello, world! програма,
+и како да го користите Cargo, Rust's менаџер на пакети и да изгради алатка. Поглавје 2 е
+практично воведување на јазикот Раг. Овде ги покриваме концептите на високо ниво
+ниво, а подоцна и поглавја ќе обезбедат дополнителни детали. Ако сакате да добиете
+Вашите раце веднаш валкани, Поглавје 2 е место за тоа. На прво, ти
+можеби дури и сакаат да го прескокнат Поглавјето 3, кое ги покрива функциите на Раст слични на оние
+на други програмски јазици, и главата веднаш до поглавје 4 за да дознаете
+Систем за сопственост на Раст. Меѓутоа, ако сте особено прецизен ученик
+кој претпочита да ги научи сите детали пред да се пресели во следниот, можеби ќе сакате
+да го прескокнете поглавјето 2 и одете директно во Поглавје 3, враќајќи се во Поглавје 2 кога
+би сакале да работите на проект со примена на деталите што сте ги научиле.
 
-Chapter 5 discusses structs and methods, and Chapter 6 covers enums, `match`
-expressions, and the `if let` control flow construct. You’ll use structs and
-enums to make custom types in Rust.
+Поглавјето 5 ги разгледува структурите и методите, а поглавје 6 ги опфаќа enums, `match`
+изразите и конструкцијата на "ако дозволиме". Ќе користиш структури и
+enums да се направи сопствени видови во 'рѓа.
 
-In Chapter 7, you’ll learn about Rust’s module system and about privacy rules
-for organizing your code and its public Application Programming Interface
-(API). Chapter 8 discusses some common collection data structures that the
-standard library provides, such as vectors, strings, and hash maps. Chapter 9
-explores Rust’s error-handling philosophy and techniques.
+Во Поглавје 7, ќе дознаете за системот за модули на Раст и за правилата за приватност
+за организирање на вашиот код и неговиот јавен интерфејс за програмирање на апликации
+(API). Во Глава 8 се дискутираат некои општи структури на податоци за собирање кои
+стандардна библиотека обезбедува, како што се вектори, жици и хаш мапи. Поглавје 9
+ги истражува филозофијата и техниките за ракување со грешки на Раст.
 
-Chapter 10 digs into generics, traits, and lifetimes, which give you the power
-to define code that applies to multiple types. Chapter 11 is all about testing,
-which even with Rust’s safety guarantees is necessary to ensure your program’s
-logic is correct. In Chapter 12, we’ll build our own implementation of a subset
-of functionality from the `grep` command line tool that searches for text
-within files. For this, we’ll use many of the concepts we discussed in the
-previous chapters.
+Поглавје 10 копа во генерики, особини и животи, кои ви даваат моќ
+за да дефинирате код кој се однесува на повеќе типови. Поглавје 11 е за тестирање,
+што дури и со гаранции за сигурност на Раст е неопходно за да се обезбеди вашата програма
+логиката е точна. Во Поглавје 12, ќе ја градиме сопствената имплементација на подмножество
+на функционалноста од алатката за командната линија `grep` која бара текст
+во рамките на датотеки. За ова, ќе користиме многу од концептите за кои дискутиравме во
+претходни поглавја.
 
-Chapter 13 explores closures and iterators: features of Rust that come from
-functional programming languages. In Chapter 14, we’ll examine Cargo in more
-depth and talk about best practices for sharing your libraries with others.
-Chapter 15 discusses smart pointers that the standard library provides and the
-traits that enable their functionality.
+Поглавје 13 ги истражува затворачите и итераторите: карактеристики на Раста од кои доаѓаат
+функционални програмски јазици. Во Поглавје 14, ќе го испитаме Карго во повеќе
+длабочината и зборувајте за најдобрите практики за споделување на вашите библиотеки со други.
+Во глава 15 се разгледуваат паметни покажувачи што ги нуди стандардната библиотека и
+особини кои овозможуваат нивната функционалност.
 
-In Chapter 16, we’ll walk through different models of concurrent programming
-and talk about how Rust helps you to program in multiple threads fearlessly.
-Chapter 17 looks at how Rust idioms compare to object-oriented programming
-principles you might be familiar with.
 
-Chapter 18 is a reference on patterns and pattern matching, which are powerful
-ways of expressing ideas throughout Rust programs. Chapter 19 contains a
-smorgasbord of advanced topics of interest, including unsafe Rust and more
-about lifetimes, traits, types, functions, and closures.
+Во Поглавје 16, ќе одиме низ различни модели на истовремени програми
+и зборувај за тоа како Рашта ви помага да програмирате во повеќе теми бестрашно.
+Во Глава 17 се разгледува како идиомите на Руст се споредуваат со објектно-ориентираното програмирање
+принципи со кои можеби сте запознаени.
 
-In Chapter 20, we’ll complete a project in which we’ll implement a low-level
-multithreaded web server!
+Поглавје 18 е референца за моделите и усогласување на моделот, кои се моќни
+начини на изразување на идеи низ програмите за 'рѓа. Поглавјето 19 содржи
+размена на напредни теми од интерес, вклучувајќи небезбедна Ржа и многу повеќе
+за време на живот, особини, видови, функции и затворања.
 
-Finally, some appendixes contain useful information about the language in a
-more reference-like format. Appendix A covers Rust’s keywords, Appendix B
-covers Rust’s operators and symbols, Appendix C covers derivable traits
-provided by the standard library, and Appendix D covers macros.
+Во Поглавје 20, ќе завршиме проект во кој ќе имплементираме ниско ниво
+мулти-тренд веб сервер!
 
-There is no wrong way to read this book: if you want to skip ahead, go for it!
-You might have to jump back to earlier chapters if you experience any
-confusion. But do whatever works for you.
+Конечно, некои додатоци содржат корисни информации за јазикот во
+повеќе референтен формат. Додаток А ги опфаќа клучни зборови на Руст, Прилог Б
+ги опфаќа операторите и симболите на Раст, Прилогот C ги опфаќа деривативните особини
+обезбедени од стандардната библиотека, а Додатокот Д опфаќа макроа.
 
-An important part of the process of learning Rust is learning how to read the
-error messages the compiler displays: these will guide you toward working code.
-As such, we’ll provide many examples of code that doesn’t compile along with
-the error message the compiler will show you in each situation. Know that if
-you enter and run a random example, it may not compile! Make sure you read the
-surrounding text to see whether the example you’re trying to run is meant to
-error. In most situations, we’ll lead you to the correct version of any code
-that doesn’t compile.
+Не постои погрешен начин да се прочита оваа книга: ако сакате да прескокнете напред, одете по неа!
+Можеби ќе треба да скокнете назад кон претходните поглавја ако имате искуство
+конфузија. Но направете што работи за вас.
 
-## Source Code
+Важен дел од процесот на учење Руст е да научите како да го прочитате
+пораките за грешки кои компајлерот ги прикажува: тие ќе ве водат кон работниот код.
+Како таква, ние ќе обезбедиме многу примери на код кој не компајлира заедно со
+пораката за грешка компајлерот ќе ви покаже во секоја ситуација. Знајте дека ако
+внесувате и стартувате случаен пример, може да не компајлирате! Бидете сигурни дека ќе го прочитате
+околниот текст за да се види дали треба да се користи примерот со кој се обидувате да извршите
+грешка. Во повеќето ситуации, ќе ве одведеме до точната верзија на кој било код
+што не се компајлира.
 
-The source files from which this book is generated can be found on
-[GitHub][book].
+## Изворен код
 
-[book]: https://github.com/rust-lang/book/tree/master/second-edition/src
+На изворните датотеки од кои оваа книга е генерирана може да се најдат на
+[GitHub] [книга].
+
+[книга]: https://github.com/rust-lang/book/tree/master/second-edition/src
