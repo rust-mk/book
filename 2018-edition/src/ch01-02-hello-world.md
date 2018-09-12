@@ -1,28 +1,28 @@
-## Hello, World!
+## Здраво свету!
 
-Now that you’ve installed Rust, let’s write your first Rust program. It’s
-traditional when learning a new language to write a little program that prints
-the text `Hello, world!` to the screen, so we’ll do the same here!
+Сега, кога сте го инсталирале Rust, ајде да ја напишеме вашата прва програма Rust. Тоа е
+традиционални кога учат нов јазик за да напише малку програма која печати
+текстот "Здраво, свет!" на екранот, па ние ќе го сториме истото тука!
 
-> Note: This book assumes basic familiarity with the command line. Rust makes
-> no specific demands about your editing or tooling or where your code lives, so
-> if you prefer to use an integrated development environment (IDE) instead of
-> the command line, feel free to use your favorite IDE. Many IDEs now have some
-> degree of Rust support; check the IDE’s documentation for details. Recently,
-> the Rust team has been focusing on enabling great IDE support, and progress
-> has been made rapidly on that front!
+> Забелешка: Оваа книга претпоставува основно познавање на командната линија. Рѓа прави
+> нема конкретни барања за вашето уредување или алатки или каде што вашиот код живее, така
+> ако сакате да користите интегрирана развојна околина (IDE) наместо
+> командната линија, слободно користете ја омилената IDE. Многу IDE сега имаат некои
+> степен на поддршка од 'рѓа; проверете ја документацијата на IDE за детали. Неодамна,
+> тимот на "Rust" се фокусира на овозможување одлична IDE поддршка и напредок
+> е направено брзо на тој фронт!
 
-### Creating a Project Directory
+### Креирање на проектниот директориум
 
-You’ll start by making a directory to store your Rust code. It doesn’t matter
-to Rust where your code lives, but for the exercises and projects in this book,
-we suggest making a *projects* directory in your home directory and keeping all
-your projects there.
+Ќе започнете со правење директориум за чување на вашиот код на 'рѓа. Не е важно
+во Рашта, каде што живее вашиот код, но за вежбите и проектите во оваа книга,
+ние предлагаме да се направи директориум * projects * во вашиот домашен директориум и да се чува сите
+вашите проекти таму.
 
-Open a terminal and enter the following commands to make a *projects* directory
-and a directory for the Hello, world! project within the *projects* directory.
+Отворете терминал и внесете ги следниве команди за да направите директориум * *
+и директориум за Здраво, светот! проект во директориумот * projects *.
 
-For Linux and macOS, enter this:
+За Linux и macOS, внесете го ова:
 
 ```text
 $ mkdir ~/projects
@@ -31,7 +31,7 @@ $ mkdir hello_world
 $ cd hello_world
 ```
 
-For Windows CMD, enter this:
+За Windows CMD, внесете го ова:
 
 ```cmd
 > mkdir "%USERPROFILE%\projects"
@@ -40,7 +40,7 @@ For Windows CMD, enter this:
 > cd hello_world
 ```
 
-For Windows PowerShell, enter this:
+За Windows PowerShell, внесете го ова:
 
 ```powershell
 > mkdir $env:USERPROFILE\projects
@@ -49,16 +49,16 @@ For Windows PowerShell, enter this:
 > cd hello_world
 ```
 
-### Writing and Running a Rust Program
+### Пишување и водење на програма за 'рѓа
 
-Next, make a new source file and call it *main.rs*. Rust files always end with
-the *.rs* extension. If you’re using more than one word in your filename, use
-an underscore to separate them. For example, use *hello_world.rs* rather than
-*helloworld.rs*.
+Потоа направете нова изворна датотека и ја наречете * main.rs *. Датотеките за 'рѓа секогаш завршуваат со
+* .rs * продолжување. Ако користите повеќе од еден збор во вашето име, користете
+подвлечено да ги раздвои. На пример, користете * hello_world.rs * наместо
+* helloworld.rs *.
 
-Now open the *main.rs* file you just created and enter the code in Listing 1-1.
+Сега отворете ја датотеката * main.rs * што ја создадовте и внесете го кодот во листинг 1-1.
 
-<span class="filename">Filename: main.rs</span>
+<span class = "filename"> Име на датотеката: main.rs </ span>
 
 ```rust
 fn main() {
@@ -66,10 +66,10 @@ fn main() {
 }
 ```
 
-<span class="caption">Listing 1-1: A program that prints `Hello, world!`</span>
+<span class = "caption"> Листата 1-1: Програма која печати "Hello, world!" </ span>
 
-Save the file and go back to your terminal window. On Linux or macOS, enter
-the following commands to compile and run the file:
+Зачувајте ја датотеката и вратете се на прозорецот на терминалот. На Linux или MacOS, внесете
+следниве команди за компилација и извршување на датотеката:
 
 ```text
 $ rustc main.rs
@@ -77,7 +77,7 @@ $ ./main
 Hello, world!
 ```
 
-On Windows, enter the command `.\main.exe` instead of `./main`:
+На Windows, внесете ја командата `. \ Main.exe` наместо`. / Main`:
 
 ```powershell
 > rustc main.rs
@@ -85,17 +85,17 @@ On Windows, enter the command `.\main.exe` instead of `./main`:
 Hello, world!
 ```
 
-Regardless of your operating system, the string `Hello, world!` should print to
-the terminal. If you don’t see this output, refer back to the “Troubleshooting”
-part of the Installation section for ways to get help.
+Без оглед на вашиот оперативен систем, низата "Hello, world!" Треба да печати на
+на терминалот. Ако не го видите овој излез, обратете се во "Решавање проблеми"
+дел од делот Инсталација за начини да добиете помош.
 
-If `Hello, world!` did print, congratulations! You’ve officially written a Rust
-program. That makes you a Rust programmer—welcome!
+Ако "Hello, world!" Не отпечати, честитки! Официјално напишавте 'рѓа
+програма. Тоа ве прави програмер за Рѓа - добредојде!
 
-### Anatomy of a Rust Program
+### Анатомија на програма за 'рѓа
 
-Let’s review in detail what just happened in your Hello, world! program.
-Here’s the first piece of the puzzle:
+Ајде детално да разгледаме што се случило во вашиот Здраво, свет! програма.
+Еве го првото парче од сложувалката:
 
 ```rust
 fn main() {
@@ -103,70 +103,70 @@ fn main() {
 }
 ```
 
-These lines define a function in Rust. The `main` function is special: it is
-always the first code that runs in every executable Rust program. The first
-line declares a function named `main` that has no parameters and returns
-nothing. If there were parameters, they would go inside the parentheses, `()`.
+Овие линии дефинираат функција во 'рѓа. Главната функција е посебна: тоа е
+секогаш првиот код што се извршува во секоја извршна програма Rust. Првиот
+line објавува функција наречена `main` која нема параметри и се враќа
+ништо. Ако има параметри, тие ќе влезат во загради, `()`.
 
-Also, note that the function body is wrapped in curly brackets, `{}`. Rust
-requires these around all function bodies. It’s good style to place the opening
-curly bracket on the same line as the function declaration, adding one space in
-between.
+Исто така, имајте во предвид дека телото на функцијата е завиткано во визитни загради, `{}`. Рѓа
+ги бара овие околу сите функционални тела. Добар стил е да го поставите отворот
+кадрава заграда на истата линија како декларацијата на функцијата, додавајќи едно празно место
+помеѓу.
 
-At the time of this writing, an automatic formatter tool called `rustfmt` is
-under development. If you want to stick to a standard style across Rust
-projects, `rustfmt` will format your code in a particular style. The Rust team
-plans to eventually include this tool with the standard Rust distribution, like
-`rustc`. So depending on when you read this book, it might already be installed
-on your computer! Check the online documentation for more details.
+Во времето на ова пишување, автоматска алатка за форматирање наречена `rustfmt` е
+во фаза на развој. Ако сакате да се придржувате до стандардниот стил низ Рашта
+проекти, `rustfmt` ќе го форматира кодот во одреден стил. Тимот на 'рѓа
+планира да на крајот ја вклучи оваа алатка со стандардната дистрибуција на Раста, како
+`рѓа`. Значи, во зависност од тоа кога ја читате оваа книга, веќе може да се инсталира
+на вашиот компјутер! Проверете ја онлајн документацијата за повеќе детали.
 
-Inside the `main` function is the following code:
+Во главната функција е следниот код:
 
 ```rust
     println!("Hello, world!");
 ```
 
-This line does all the work in this little program: it prints text to the
-screen. There are four important details to notice here. First, Rust style is
-to indent with four spaces, not a tab.
+Оваа линија ја прави целата работа во оваа мала програма: таа го печати текстот на
+екран. Постојат четири важни детали за да се забележи тука. Прво, стилот на 'рѓа е
+да се вметне со четири простори, а не таб.
 
-Second, `println!` calls a Rust macro. If it called a function instead, it
-would be entered as `println` (without the `!`). We’ll discuss Rust macros in
-more detail in Appendix D. For now, you just need to know that using a `!`
-means that you’re calling a macro instead of a normal function.
+Второ, "println!" Повикува маглот за 'рѓа. Ако наместо тоа ја нарече функцијата, таа
+ќе се внесе како `println` (без`! `). Ќе разговараме за макроата на Руст
+повеќе детали во Додаток D. Засега, само треба да знаете дека користејќи `!`
+значи дека повикувате макро, наместо нормална функција.
 
-Third, you see the `"Hello, world!"` string. We pass this string as an argument
-to `println!`, and the string is printed to the screen.
+Трето, гледате `` Hello, world! '`String. Ние ја пренесуваме оваа низа како аргумент
+да `println! ', а стрингот е отпечатен на екранот.
 
-Fourth, we end the line with a semicolon (`;`), which indicates that this
-expression is over and the next one is ready to begin. Most lines of Rust code
-end with a semicolon.
+Четврто, ја завршуваме линијата со точка-запирка (`;`), што укажува на тоа
+изразот е завршен, а следниот е подготвен да започне. Повеќето линии на Руст код
+крајот со точка-запирка.
 
-### Compiling and Running Are Separate Steps
+### Собирање и извршување се одделни чекори
 
-You’ve just run a newly created program, so let’s examine each step in the
-process.
+Вие само го стартувате новосоздадената програма, па да го испитаме секој чекор во
+процес.
 
-Before running a Rust program, you must compile it using the Rust compiler by
-entering the `rustc` command and passing it the name of your source file, like
-this:
+Пред да ја стартувате програмата Rust, мора да ја компајлирате користејќи го компајлерот Rust со
+влегувајќи во командата `rustc` и донесувајќи го името на вашата изворна датотека, како
+ова:
 
 ```text
 $ rustc main.rs
 ```
 
-If you have a C or C++ background, you’ll notice that this is similar to `gcc`
-or `clang`. After compiling successfully, Rust outputs a binary executable.
+Ако имате C или C + + позадина, ќе забележите дека ова е слично на `gcc`
+или `clang`. По компилирањето успешно, Rust излегува со бинарна извршна датотека.
 
-On Linux and macOS you can see the executable by entering the `ls` command in
-your shell as follows:
+На Linux и macOS можете да ја видите извршната датотека со внесување на командата `ls` во
+вашата школка како што следува:
 
 ```text
 $ ls
 main  main.rs
 ```
 
-With PowerShell on Windows, you can use `ls` as well, but you'll see three files:
+Со PowerShell на Windows, можете да го користите и `ls`, но ќе видите три датотеки:
 
 ```text
 > ls
@@ -182,7 +182,7 @@ Mode                LastWriteTime         Length Name
 -a----         6/1/2018   7:31 AM             14 main.rs
 ```
 
-With CMD on Windows, you would enter the following:
+Со CMD на Windows, ќе го внесете следново:
 
 ```cmd
 > dir /B %= the /B option says to only show the file names =%
@@ -191,28 +191,28 @@ main.pdb
 main.rs
 ```
 
-This shows the source code file with the *.rs* extension, the executable file
-(*main.exe* on Windows, but *main* on all other platforms), and, when using
-CMD, a file containing debugging information with the *.pdb* extension. From
-here, you run the *main* or *main.exe* file, like this:
+Ова ја прикажува датотеката со изворниот код со * .rs * екстензија, извршна датотека
+(* main.exe * на Windows, но * главна * на сите други платформи), и кога користите
+CMD, датотека која содржи информации за дебагирање со * .pdb * наставката. Од
+тука, ја стартувате датотеката * main * или * main.exe *, вака:
 
 ```text
 $ ./main # or .\main.exe on Windows
 ```
 
-If *main.rs* was your Hello, world! program, this line would print `Hello,
-world!` to your terminal.
+Ако * main.rs * беше вашиот Здраво, светот! програма, оваа линија ќе печати `Здраво,
+светот! "на вашиот терминал.
 
-If you’re more familiar with a dynamic language, such as Ruby, Python, or
-JavaScript, you might not be used to compiling and running a program as
-separate steps. Rust is an *ahead-of-time compiled* language, meaning you can
-compile a program and give the executable to someone else, and they can run it
-even without having Rust installed. If you give someone a *.rb*, *.py*, or
-*.js* file, they need to have a Ruby, Python, or JavaScript implementation
-installed (respectively). But in those languages, you only need one command to
-compile and run your program. Everything is a trade-off in language design.
+Ако сте повеќе запознаени со динамичен јазик, како што се Руби, Пајтон или
+JavaScript, можеби нема да се користи за составување и водење на програма како
+одделни чекори. Рѓа е * пред-време компајлиран * јазик, што значи дека можете
+составете програма и му ги дадете извршната програма на некој друг, и тие можат да ја извршат
+дури и без да се инсталира Rust. Ако ви даде некој * .rb *, * .py *, или
+* .js * датотека, тие треба да имаат Руби, Пајтон или JavaScript имплементација
+инсталирани (соодветно). Но, на тие јазици, ти треба само една команда
+компајлирање и извршување на вашата програма. Сè е компромис во дизајнот на јазикот.
 
-Just compiling with `rustc` is fine for simple programs, but as your project
-grows, you’ll want to manage all the options and make it easy to share your
-code. Next, we’ll introduce you to the Cargo tool, which will help you write
-real-world Rust programs.
+Само составувањето со `rustc` е во ред за едноставни програми, но како ваш проект
+расте, ќе сакате да управувате со сите опции и ќе ви биде лесно да го споделите
+код. Потоа, ќе ве запознаеме со алатката Cargo, која ќе ви помогне да пишувате
+реални програми за Rust.
