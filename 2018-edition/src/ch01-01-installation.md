@@ -1,137 +1,138 @@
-## Installation
+## Инсталација
 
-The first step is to install Rust. We’ll download Rust through `rustup`, a
-command line tool for managing Rust versions and associated tools. You’ll need
-an internet connection for the download.
+Првиот чекор е да се инсталира Rust. Ќе ја преземеме Руста преку `ѓубре`, а
+командна линија алатка за управување со Руст верзии и придружни алатки. Ќе ви треба
+интернет конекција за преземање.
 
-> Note: If you prefer not to use `rustup` for some reason, please see [the Rust
-> installation page](https://www.rust-lang.org/install.html) for other options.
+> Забелешка: Ако не сакате да користите `rustup` поради некоја причина, ве молиме погледнете [Rust
+> страница за инсталација] (https://www.rust-lang.org/install.html) за други опции.
 
-The following steps install the latest stable version of the Rust compiler.
-Rust’s stability guarantees ensure that all the examples in the book that
-compile will continue to compile with newer Rust versions. The output might
-differ slightly between versions, because Rust often improves error messages
-and warnings. In other words, any newer, stable version of Rust you install
-using these steps should work as expected with the content of this book.
+Следните чекори ја инсталираат најновата стабилна верзија на компајлерот Rust.
+Гаранциите за стабилност на Rust гарантираат дека сите примери во книгата тоа
+компајлирањето ќе продолжи да се компајлира со поновите верзии на Руст. Излезот може
+се разликуваат малку помеѓу верзии, бидејќи Rust често ги подобрува пораките за грешки
+и предупредувања. Со други зборови, секоја нова, стабилна верзија на Rust што ја инсталирате
+користејќи ги овие чекори треба да работи како што се очекуваше со содржината на оваа книга.
 
-> ### Command Line Notation
+> ### Нотација на командната линија
 >
-> In this chapter and throughout the book, we’ll show some commands used in the
-> terminal. Lines that you should enter in a terminal all start with `$`. You
-> don’t need to type in the `$` character; it indicates the start of each
-> command. Lines that don’t start with `$` typically show the output of the
-> previous command. Additionally, PowerShell-specific examples will use `>`
-> rather than `$`.
+> Во ова поглавје и низ целата книга, ќе покажеме некои команди што се користат во
+> терминал. Линиите што треба да ги внесете во терминал започнуваат со `$`. Вие
+> Не треба да внесувате знак "$"; тоа го означува почетокот на секоја од нив
+> команда. Линиите кои не започнуваат со `$` обично го покажуваат излезот на
+> претходна команда. Дополнително, PowerShell-специфични примери ќе користат `>`
+> наместо "$".
 
-### Installing `rustup` on Linux or macOS
+### Инсталирање `rustup` на Linux или macOS
 
-If you’re using Linux or macOS, open a terminal and enter the following command:
+Ако користите Linux или MacOS, отворете терминал и внеси ја следнава команда:
 
 ```text
 $ curl https://sh.rustup.rs -sSf | sh
-```
+`` `
 
-The command downloads a script and starts the installation of the `rustup`
-tool, which installs the latest stable version of Rust. You might be prompted
-for your password. If the install is successful, the following line will appear:
+Командата презема скрипта и ја започнува инсталацијата на `rustup`
+алатка, која ја инсталира најновата стабилна верзија на Rust. Може да ви биде побарано
+за вашата лозинка. Ако инсталацијата е успешна, ќе се појави следната линија:
 
 ```text
 Rust is installed now. Great!
 ```
 
-If you prefer, feel free to download the script and inspect it before running
-it.
+Доколку сакате, слободно да го преземете скриптот и да ја испитате пред да трчате
+тоа.
 
-The installation script automatically adds Rust to your system PATH after your
-next login. If you want to start using Rust right away instead of restarting
-your terminal, run the following command in your shell to add Rust to your
-system PATH manually:
+Инсталационата скрипта автоматски додава Rust во системот PATH по вашата
+следното најавување. Ако сакате веднаш да почнете да ја користите Rust наместо да го рестартирате
+вашиот терминал, извршете ја следнава команда во вашата школка за да додадете 'рѓа на вашиот
+систем PATH рачно:
 
 ```text
 $ source $HOME/.cargo/env
 ```
 
-Alternatively, you can add the following line to your *~/.bash_profile*:
+Алтернативно, можете да ја додадете следнава линија на вашиот * ~ / .bash_profile *:
 
 ```text
 $ export PATH="$HOME/.cargo/bin:$PATH"
 ```
 
-Additionally, you’ll need a linker of some kind. It’s likely one is already
-installed, but when you try to compile a Rust program and get errors indicating
-that a linker could not execute, that means a linker isn’t installed on your
-system and you’ll need to install one manually. C compilers usually come with
-the correct linker. Check your platform’s documentation for how to install a C
-compiler. Also, some common Rust packages depend on C code and will need a C
-compiler. Therefore, it might be worth installing one now.
+Дополнително, ќе ви треба некој линкер. Веројатно е веќе
+инсталиран, но кога ќе се обидете да составите програма "Руст" и да добиете грешки што укажуваат на тоа
+дека линкер не може да се изврши, тоа значи дека линкер не е инсталиран на вашиот
+систем и ќе треба да го инсталирате рачно. C компајлери обично доаѓаат со
+точниот линкер. Проверете документацијата на вашата платформа за тоа како да инсталирате C
+компајлер. Исто така, некои вообичаени пакети за Rust зависат од кодот C и ќе треба C
+компајлер. Затоа, можеби вреди да се инсталира еден.
 
-### Installing `rustup` on Windows
+### Инсталирање `rustup` во Windows
 
-On Windows, go to [https://www.rust-lang.org/install.html][install] and follow
-the instructions for installing Rust. At some point in the installation, you’ll
-receive a message explaining that you’ll also need the C++ build tools for
-Visual Studio 2013 or later. The easiest way to acquire the build tools is to
-install [Build Tools for Visual Studio 2017][visualstudio]. The tools are in
-the Other Tools and Frameworks section.
+Во Windows, одете на [https://www.rust-lang.org/install.html][install] и следете
+инструкциите за инсталирање на 'рѓа. Во одреден момент во инсталацијата, ќе
+добивате порака објаснувајќи дека ќе ви бидат потребни и алатките за создавање на C ++
+Visual Studio 2013 или подоцна. Најлесен начин да се здобијат со алатки за градење е да
+инсталирајте ги [Build Tools for Visual Studio 2017] [visualstudio]. Алатките се во
+во делот Други алати и рамки.
 
 [install]: https://www.rust-lang.org/install.html
 [visualstudio]: https://www.visualstudio.com/downloads/
 
-The rest of this book uses commands that work in both *cmd.exe* and PowerShell.
-If there are specific differences, we’ll explain which to use.
+Остатокот од оваа книга користи команди кои работат во двете * cmd.exe * и PowerShell.
+Ако има одредени разлики, ќе објасниме што да се користи.
 
-### Updating and Uninstalling
+### Ажурирање и деинсталирање
 
-After you’ve installed Rust via `rustup`, updating to the latest version is
-easy. From your shell, run the following update script:
+Откако ќе го инсталирате Rust преку `rustup`, ажурирањето до најновата верзија е
+лесно. Од вашата школка, извршете ја следнава скрипта за ажурирање:
 
 ```text
 $ rustup update
 ```
 
-To uninstall Rust and `rustup`, run the following uninstall script from your
-shell:
+За да ја отстраните Rust и `rustup`, извршете ја следната скрипта за деинсталирање од вашиот
+школка:
 
 ```text
 $ rustup self uninstall
 ```
 
-### Troubleshooting
+### Решавање на проблеми
 
-To check whether you have Rust installed correctly, open a shell and enter this
+За да проверите дали имате Rust правилно инсталирано, отворете школка и внесете го ова
 line:
 
 ```text
 $ rustc --version
 ```
 
-You should see the version number, commit hash, and commit date for the latest
-stable version that has been released in the following format:
+Треба да го видите бројот на верзијата, хашот за извршување и датумот на извршување
+стабилна верзија која е издадена во следниов формат:
 
 ```text
 rustc x.y.z (abcabcabc yyyy-mm-dd)
 ```
 
-If you see this information, you have installed Rust successfully! If you don’t
-see this information and you’re on Windows, check that Rust is in your `%PATH%`
-system variable. If that’s all correct and Rust still isn’t working, there are
-a number of places you can get help. The easiest is [the #rust IRC channel on
-irc.mozilla.org][irc]<!-- ignore -->, which you can access through
-[Mibbit][mibbit]. At that address you can chat with other Rustaceans (a silly
-nickname we call ourselves) who can help you out. Other great resources include
-[the Users forum][users] and [Stack Overflow][stackoverflow].
+Ако ги видите овие информации, успешно го инсталиравте Rust! Ако не
+видете ги овие информации и сте на Windows, проверете дали Rust е во вашиот "% PATH%"
+системска променлива. Ако сето тоа е точно и Rust сè уште не работи, постојат
+голем број места можете да добиете помош. Најлесно е [вклучен # IRC канал
+irc.mozilla.org] [irc] <! - ignore ->, преку кој можете да пристапите
+[Mibbit] [mibbit]. На таа адреса можете да разговарате со други Рустеи (глупо
+прекар ние се нарекуваме себеси) кој може да ви помогне. Други големи ресурси вклучуваат
+[Форум на корисници] [users] и [Стак претекување] [stackoverflow].
+
 
 [irc]: irc://irc.mozilla.org/#rust
 [mibbit]: http://chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
 [users]: https://users.rust-lang.org/
 [stackoverflow]: http://stackoverflow.com/questions/tagged/rust
 
-### Local Documentation
+### Локална документација
 
-The installer also includes a copy of the documentation locally, so you can
-read it offline. Run `rustup doc` to open the local documentation in your
-browser.
+Инсталаторот исто така вклучува и копија од документацијата на локално ниво, така што можете
+прочитај го офлајн. Извршете `rustup doc` за да ја отворите локалната документација во вашиот
+прелистувач.
 
-Any time a type or function is provided by the standard library and you’re not
-sure what it does or how to use it, use the application programming interface
-(API) documentation to find out!
+Во секое време тип или функција е обезбедена од стандардната библиотека и не сте
+сигурно што прави и како да го користите, користете интерфејс за програмирање на апликации
+(API) документација за да дознаете!
